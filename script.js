@@ -1,26 +1,25 @@
 
-const calculator = document.querySelector(".calculator")
-const screen = document.querySelector(".screen")
-const number = document.querySelector(".number")
+const input = document.querySelector(".input-screen")
 const countings = document.querySelectorAll(".counting")
 const equal = document.querySelector("#equal")
 const ac = document.querySelector("#ac")
 const arrow = document.querySelector("#arrow")
 
-countings.forEach((but) => {
-    but.addEventListener("click", () => {
-        screen.value += but.innerText;
+countings.forEach((element) => {
+    element.addEventListener("click", () => {
+        input.value += element.innerText;
     })
 });
 
 equal.addEventListener("click", () => {   // eval means string to string nhi manta hai number manta hai 
-    screen.value = eval(screen.value);
+    input.value = eval(input.value);
 });
 
 ac.addEventListener("click", () => {
-    screen.value = ""
+    input.value = ""
 })
 
 arrow.addEventListener("click", () => {
-    screen.value = screen.value.slice(0, -1);
+    input.value = input.value.slice(0, -1);
 })
+
